@@ -2,7 +2,8 @@
 -- Challenge: Try to include the team's name in the results. Is it accurate?
 
 SELECT year, name, MAX(wins) FROM teams 
-WHERE year > 1960
+-- you actually can't include name without having it in group by, bc this is likely inaccurate
+WHERE year >= 1960
 GROUP BY year
 ORDER BY MAX(wins) DESC;
 
